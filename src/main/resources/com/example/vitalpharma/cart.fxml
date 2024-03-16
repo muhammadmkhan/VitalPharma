@@ -6,6 +6,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="617.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vitalpharma.CartPageController">
     <children>
@@ -121,6 +122,16 @@
                     <content>
                         <TilePane fx:id="tilePane2" hgap="10" prefHeight="433.0" prefWidth="405.0" vgap="10" />
                     </content></ScrollPane>
+            <Label layoutX="712.0" layoutY="215.0" prefHeight="27.0" prefWidth="143.0" text="TOTAL:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalValue" layoutX="864.0" layoutY="214.0" prefHeight="27.0" prefWidth="143.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

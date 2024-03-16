@@ -103,13 +103,13 @@ public class MedicinePageController implements Initializable {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
 
-        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url FROM vp AS med LIMIT 100";
+        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url,med.excellent_review FROM vp AS med LIMIT 60";
         try{
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(getMedNameAndImageQuery);
 
             while (resultSet.next()){
-                medicineList.add(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url"))));
+                medicineList.add(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")),Integer.parseInt(resultSet.getString("excellent_review"))));
             }
 
         }catch (Exception e){e.printStackTrace();}

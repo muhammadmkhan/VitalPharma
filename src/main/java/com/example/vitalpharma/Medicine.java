@@ -10,6 +10,11 @@ public class Medicine {
         this.name = name;
         this.image = image;
     }
+    public Medicine(String name, Image image,int price) {
+        this.name = name;
+        this.image = image;
+        this.price=price;
+    }
     public Medicine(String name) {
         this.name = name;
 

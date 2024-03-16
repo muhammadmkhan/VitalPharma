@@ -62,7 +62,7 @@ public class InventoryPageController implements Initializable {
 
 
         Label nameLabel = new Label(med.getName());
-
+        Label PriceLabel = new Label("$"+med.getPrice());
         Button checkBox = new Button("add to cart");
         checkBox.setUserData(med.getName());
         checkBox.setOnAction(new EventHandler<ActionEvent>() {
@@ -75,7 +75,7 @@ public class InventoryPageController implements Initializable {
                 shoppingCArt.addMed(med);
             }
         });
-        vbox.getChildren().addAll(imageView, nameLabel,checkBox);
+        vbox.getChildren().addAll(imageView, nameLabel,PriceLabel,checkBox);
 
         return vbox;
     }
@@ -84,8 +84,6 @@ public class InventoryPageController implements Initializable {
         try {
             FXMLLoader medicinePageLoader = new FXMLLoader(getClass().getResource("cart.fxml"));
             Parent medicinePageRoot = medicinePageLoader.load();
-            CartPageController cartPageController =new CartPageController();
-            cartPageController.setTiltePane(getSelectedVBoxes());
             // Create a scene with the 'medicinePage' content
             Scene medicinePageScene = new Scene(medicinePageRoot);
             medicinePageScene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());

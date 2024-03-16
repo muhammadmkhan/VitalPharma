@@ -1,6 +1,8 @@
 package com.example.vitalpharma;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class shoppingCArt {
@@ -8,8 +10,8 @@ public class shoppingCArt {
     private static shoppingCArt INSTANCE;
 
     public static shoppingCArt getINSTANCE(){
-        if (INSTANCE!=null){
-            INSTANCE=new shoppingCArt();
+        if (INSTANCE==null){
+            INSTANCE= new shoppingCArt();
         }
         return INSTANCE;
     }
@@ -45,5 +47,9 @@ public class shoppingCArt {
             q=+entryCost;
         }
         return q;
+    }
+
+    public List<CartEntry> getEntries(){
+        return new ArrayList<>(entries.values());
     }
 }
