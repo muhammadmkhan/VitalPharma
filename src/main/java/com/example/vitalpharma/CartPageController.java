@@ -132,7 +132,8 @@ public class CartPageController {
             }
         }
         Random random = new Random();
-        String getMedNameAndImageQuery = "INSERT INTO `order`(orderID,medicines) VALUES ('" + random.nextInt(Integer.MAX_VALUE) + "','" + meds + "');";
+        int r=random.nextInt(Integer.MAX_VALUE);
+        String getMedNameAndImageQuery = "INSERT INTO `order`(orderID,medicines) VALUES ('" + r + "','" + meds + "');";
         try {
             PreparedStatement statement = connection.prepareStatement(getMedNameAndImageQuery);
             statement.executeUpdate();
@@ -141,7 +142,7 @@ public class CartPageController {
             e.printStackTrace();
         }
         op.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null)));
-        op.setText("Order Placed!");
+        op.setText("Order "+r+"Placed!");
         op.setTextFill(Color.WHITE);
         op.setTextAlignment(TextAlignment.CENTER);
 
