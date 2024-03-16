@@ -27,7 +27,7 @@ public class shoppingCArt {
     if (cartEntry!=null){
         cartEntry.addQuantity();
     }else{
-        Medicine medicine= new Medicine(medName.getName(),medName.getImage());
+        Medicine medicine= new Medicine(medName.getName(),medName.getImage(), medName.getPrice());
         CartEntry entry= new CartEntry(medicine,1);
         entries.put(medName.getName().toUpperCase(),entry);
     }

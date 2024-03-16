@@ -19,7 +19,7 @@
                                 <Image url="@medicine.png" />
                             </image>
                         </ImageView>
-                        <Button layoutX="9.0" layoutY="201.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Dashboard" textFill="#066790" />
+                        <Button onAction="#goToIndexPageButtonClicked" layoutX="9.0" layoutY="201.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Dashboard" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Inventory" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="293.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Menu" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="338.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Customer" textFill="#066790" />
@@ -39,7 +39,7 @@
                                 </DropShadow>
                             </effect>
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " textFill="#030d11" />
+                                <Button onAction="#goToMedicinePageButtonClicked" mnemonicParsing="false" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " textFill="#030d11" />
                             </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
@@ -134,5 +134,7 @@
             </Label>
             </children>
         </AnchorPane>
+      <Button onAction="#saveOrder" layoutX="719.0" layoutY="260.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="130.0" text="Order" />
+      <Label fx:id="op" layoutX="722.0" layoutY="320.0" prefHeight="33.0" prefWidth="353.0"  />
     </children>
 </AnchorPane>
