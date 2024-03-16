@@ -52,4 +52,9 @@ public class shoppingCArt {
     public List<CartEntry> getEntries(){
         return new ArrayList<>(entries.values());
     }
+
+    public void emptyCart(){
+        this.entries.clear();
+    }
+
 }

@@ -57,33 +57,33 @@ public class CartPageController {
         op.setBackground(new Background(new BackgroundFill(Color.TRANSPARENT, null, null)));
         op.setText("");
 
-        if (entries.isEmpty()){
+        if (entries.isEmpty()) {
             Label label = new Label("Empty Cart");
             tilePane2.getChildren().add(label);
-        }else{
-            Integer price =0;
-            for (CartEntry entry:entries){
+        } else {
+            Integer price = 0;
+            for (CartEntry entry : entries) {
                 tilePane2.getChildren().add(getMed(entry.getMedicine().getName()));
-                price+=entry.getMedicine().getPrice();
+                price += entry.getMedicine().getPrice();
             }
 
-            totalValue.setText("$ "+price);
+            totalValue.setText("$ " + price);
         }
 
     }
 
-    public VBox getMed(String medName){
+    public VBox getMed(String medName) {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
 
-        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url,med.excellent_review FROM vp AS med WHERE med.medicine_name = '"+medName+"'";
+        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url,med.excellent_review FROM vp AS med WHERE med.medicine_name = '" + medName + "'";
         List<Medicine> medicineList = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(getMedNameAndImageQuery);
 
             while (resultSet.next()) {
-                medicineList.add(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")),Integer.parseInt(resultSet.getString("excellent_review"))));
+                medicineList.add(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")), Integer.parseInt(resultSet.getString("excellent_review"))));
             }
 
         } catch (Exception e) {
@@ -92,6 +92,7 @@ public class CartPageController {
 
         return createMedBox(medicineList.get(0));
     }
+
     private VBox createMedBox(Medicine med) {
         VBox vbox = new VBox();
 
@@ -116,18 +117,22 @@ public class CartPageController {
     }
 
     @FXML
-    private void saveOrder(){
+    private void saveOrder() {
 
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
         List<CartEntry> entries = shoppingCArt.getINSTANCE().getEntries();
 
         String meds = "";
-        for (CartEntry entry:entries){
-            meds=meds+","+entry.getMedicine().getName();
+        for (CartEntry entry : entries) {
+            if (meds.equals("")) {
+                meds = entry.getMedicine().getName();
+            } else {
+                meds = meds + "," + entry.getMedicine().getName();
+            }
         }
         Random random = new Random();
-        String getMedNameAndImageQuery = "INSERT INTO `order`(orderID,medicines) VALUES ('"+random.nextInt(Integer.MAX_VALUE)+"','"+meds+"');";
+        String getMedNameAndImageQuery = "INSERT INTO `order`(orderID,medicines) VALUES ('" + random.nextInt(Integer.MAX_VALUE) + "','" + meds + "');";
         try {
             PreparedStatement statement = connection.prepareStatement(getMedNameAndImageQuery);
             statement.executeUpdate();
@@ -139,6 +144,8 @@ public class CartPageController {
         op.setText("Order Placed!");
         op.setTextFill(Color.WHITE);
         op.setTextAlignment(TextAlignment.CENTER);
+
+        shoppingCArt.getINSTANCE().emptyCart();
     }
 
     @FXML
