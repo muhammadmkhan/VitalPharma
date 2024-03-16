@@ -1,0 +1,45 @@
+
+.button{
+-fx-background-color: #ADE4FC;
+}
+
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+.button{
+-fx-background-color: #ADE4FC;
+}
+
+.button:hover{
+-fx-border-color: #ADE4FC;
+-fx-border-width:0px 0px 0px 6px;
+-fx-background-color: #ADE4FC;
+-fx-cursor :hand;
+}
+.upper_button{
+-fx-background-color: #ADE4FC;
+}
+.view_all{
+-fx-background-color: #ADE4FC;
+}
+.cursor_hand{
+-fx-cursor :hand;
+}

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vitalpharma.HelloController">
+    <children>
+        <HBox alignment="TOP_CENTER" layoutX="245.0" layoutY="120.0" prefHeight="34.0" prefWidth="636.0" style="-fx-background-color: #ffffff;">
+            <children>
+                <VBox prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#goToMedicinePageButtonClicked" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " />
+                    </children>
+                </VBox>
+                <VBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="154.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Wellness" />
+                    </children>
+                </VBox>
+                <VBox layoutX="156.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Lab Tests" />
+                    </children>
+                </VBox>
+                <VBox layoutX="303.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Beauty" />
+                    </children>
+                </VBox>
+                <VBox layoutX="449.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow>
+                            <color>
+                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <children>
+                        <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Heath Corner" />
+                    </children>
+                </VBox>
+            <VBox layoutX="274.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#searchOnClick" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Search" />
+               </children>
+            </VBox>
+            </children>
+        </HBox>
+      <Pane layoutY="169.0" prefHeight="251.0" prefWidth="1100.0">
+         <children>
+            <ImageView fitHeight="251.0" fitWidth="1100.0" layoutX="142.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+                 <Image url="@meds.jpeg" />
+             </image>
+         </ImageView><ImageView fitHeight="251.0" fitWidth="1100.0" layoutX="455.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+                 <Image url="@meds.jpeg" />
+             </image>
+         </ImageView><ImageView fitHeight="251.0" fitWidth="383.0" layoutX="765.0" pickOnBounds="true" preserveRatio="true">
+             <image>
+                 <Image url="@meds.jpeg" />
+             </image>
+         </ImageView>
+            <ImageView fitHeight="251.0" fitWidth="1100.0" layoutX="-135.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@meds.jpeg" />
+               </image>
+            </ImageView>
+              <HBox layoutX="229.0" layoutY="126.0" prefHeight="120.0" prefWidth="643.0" style="-fx-background-color: #ffffff; -fx-background-radius: 20;">
+                  <effect>
+                      <DropShadow>
+                          <color>
+                              <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                          </color>
+                      </DropShadow>
+                  </effect>
+                  <children>
+                      <TextFlow translateX="-10.0">
+                          <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                          </HBox.margin>
+                          <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="7.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="120.0" prefWidth="210.0" text="10M+ Happy Customers">
+                                  <graphic>
+                                      <ImageView disable="true" fitHeight="55.0" fitWidth="85.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@medicine.png" />
+                                          </image>
+                                          <cursor>
+                                              <Cursor fx:constant="OPEN_HAND" />
+                                          </cursor>
+                                      </ImageView>
+                                  </graphic>
+                                  <font>
+                                      <Font name="System Bold" size="16.0" />
+                                  </font>
+                                  <padding>
+                                      <Insets top="20.0" />
+                                  </padding>
+                              </Label>
+                          </children>
+                      </TextFlow>
+                      <TextFlow translateX="-10.0">
+                          <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                          </HBox.margin>
+                          <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="120.0" prefWidth="210.0" snapToPixel="false" text="100M+ People Served">
+                                  <graphic>
+                                      <ImageView fitHeight="55.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
+                                          <image>
+                                              <Image url="@medicine.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <font>
+                                      <Font name="System Bold" size="16.0" />
+                                  </font>
+                                  <padding>
+                                      <Insets top="23.0" />
+                                  </padding>
+                              </Label>
+                          </children>
+                      </TextFlow>
+                      <TextFlow translateX="-10.0">
+                          <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                          </HBox.margin>
+                          <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="120.0" prefWidth="210.0" text="50+ Offline Stores">
+                                  <graphic>
+                                      <ImageView fitHeight="55.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                          <image>
+                                              <Image url="@medicine.png" />
+                                          </image>
+                                      </ImageView>
+                                  </graphic>
+                                  <padding>
+                                      <Insets top="20.0" />
+                                  </padding>
+                                  <font>
+                                      <Font name="System Bold" size="16.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </TextFlow>
+                  </children>
+              </HBox>
+
+
+         </children>
+      </Pane>
+        <Pane layoutX="-2.0" layoutY="622.0" prefHeight="84.0" prefWidth="1102.0" style="-fx-background-color: #09AAF0;" />
+        <Pane layoutY="-5.0" prefHeight="18.0" prefWidth="1102.0" style="-fx-background-color: #09AAF0;" />
+        <ImageView fitHeight="71.0" fitWidth="67.0" layoutX="54.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@medicine.png" />
+            </image>
+        </ImageView>
+        <HBox layoutX="121.0" layoutY="59.0" prefHeight="34.0" prefWidth="942.0" style="-fx-background-radius: 25; -fx-background-color: white;">
+            <children>
+                <Label prefHeight="39.0" prefWidth="198.0" text="Vital Pharma">
+                    <font>
+                        <Font name="Ebrima Bold" size="26.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="searchtext" prefHeight="34.0" prefWidth="422.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25;" />
+
+                <Label prefHeight="34.0" prefWidth="195.0" text="Offers Cart Sign in/ Sign out">
+                    <HBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </HBox.margin>
+                </Label>
+            <!--<Button mnemonicParsing="false" onAction="#goToMedicinePageButtonClicked" text="Med Page" />-->
+            </children>
+        </HBox>
+      <ScrollPane layoutX="1.0" layoutY="422.0" prefHeight="200.0" prefWidth="1100.0">
+         <content>
+            <TilePane fx:id="tilePane" hgap="10" orientation="HORIZONTAL" prefColumns="4" prefHeight="200.0" prefWidth="1096.0" vgap="10" />
+         </content>
+      </ScrollPane>
+    </children>
+</AnchorPane>
