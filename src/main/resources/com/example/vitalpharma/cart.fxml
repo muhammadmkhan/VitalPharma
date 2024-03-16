@@ -19,7 +19,7 @@
                             </image>
                         </ImageView>
                         <Button layoutX="9.0" layoutY="201.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Dashboard" textFill="#066790" />
-                        <Button layoutX="9.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: #066790;" text="Inventory" textFill="#09aaf0" />
+                        <Button layoutX="9.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Inventory" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="293.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Menu" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="338.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Customer" textFill="#066790" />
                     </children>
@@ -38,7 +38,7 @@
                                 </DropShadow>
                             </effect>
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " textFill="#066790" />
+                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " textFill="#030d11" />
                             </children>
                         </VBox>
                         <VBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
@@ -101,18 +101,6 @@
                                 <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Heath Corner" />
                             </children>
                         </VBox>
-                        <VBox layoutX="528.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: grey;">
-                            <effect>
-                                <DropShadow>
-                                    <color>
-                                        <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                                    </color>
-                                </DropShadow>
-                            </effect>
-                            <children>
-                                <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Go To Cart" />
-                            </children>
-                        </VBox>
                     </children>
                 </HBox>
                 <Pane layoutX="-2.0" layoutY="672.0" prefHeight="34.0" prefWidth="1102.0" style="-fx-background-color: #09AAF0;" />
@@ -129,9 +117,9 @@
                         <Button mnemonicParsing="false" prefHeight="33.0" prefWidth="130.0" style="-fx-background-color: #00d38c; -fx-background-radius: 25;" text="Appointment" />
                     </children>
                 </HBox>
-                <ScrollPane layoutX="245.0" layoutY="208.0" prefHeight="433.0" prefWidth="823.0">
+                <ScrollPane layoutX="245.0" layoutY="208.0" prefHeight="433.0" prefWidth="412.0">
                     <content>
-                        <TilePane fx:id="tilePane2" hgap="10" prefHeight="433.0" prefWidth="823.0" vgap="10" />
+                        <TilePane fx:id="tilePane2" hgap="10" prefHeight="433.0" prefWidth="405.0" vgap="10" />
                     </content></ScrollPane>
             </children>
         </AnchorPane>

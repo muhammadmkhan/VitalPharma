@@ -11,97 +11,6 @@
 
 <AnchorPane minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #ffffff; -fx-background-radius: 25;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vitalpharma.HelloController">
     <children>
-        <HBox alignment="TOP_CENTER" layoutX="245.0" layoutY="120.0" prefHeight="34.0" prefWidth="636.0" style="-fx-background-color: #ffffff;">
-            <children>
-                <VBox prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                    </HBox.margin>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                    <children>
-                        <Button mnemonicParsing="false" onAction="#goToMedicinePageButtonClicked" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " />
-                    </children>
-                </VBox>
-                <VBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                    </HBox.margin>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                    <children>
-                        <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="154.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Wellness" />
-                    </children>
-                </VBox>
-                <VBox layoutX="156.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                    </HBox.margin>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                    <children>
-                        <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Lab Tests" />
-                    </children>
-                </VBox>
-                <VBox layoutX="303.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                    </HBox.margin>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                    <children>
-                        <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Beauty" />
-                    </children>
-                </VBox>
-                <VBox layoutX="449.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-                    <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                    </HBox.margin>
-                    <effect>
-                        <DropShadow>
-                            <color>
-                                <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                            </color>
-                        </DropShadow>
-                    </effect>
-                    <children>
-                        <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Heath Corner" />
-                    </children>
-                </VBox>
-            <VBox layoutX="274.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
-               <effect>
-                  <DropShadow>
-                     <color>
-                        <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <children>
-                  <Button mnemonicParsing="false" onAction="#searchOnClick" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Search" />
-               </children>
-            </VBox>
-            </children>
-        </HBox>
       <Pane layoutY="169.0" prefHeight="251.0" prefWidth="1100.0">
          <children>
             <ImageView fitHeight="251.0" fitWidth="1100.0" layoutX="142.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
@@ -112,7 +21,7 @@
              <image>
                  <Image url="@meds.jpeg" />
              </image>
-         </ImageView><ImageView fitHeight="251.0" fitWidth="383.0" layoutX="765.0" pickOnBounds="true" preserveRatio="true">
+         </ImageView><ImageView fitHeight="251.0" fitWidth="383.0" layoutX="783.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
              <image>
                  <Image url="@meds.jpeg" />
              </image>
@@ -202,6 +111,97 @@
                       </TextFlow>
                   </children>
               </HBox>
+              <HBox alignment="TOP_CENTER" layoutX="236.0" layoutY="26.0" prefHeight="34.0" prefWidth="636.0" style="-fx-background-color: #ffffff;">
+                  <children>
+                      <VBox prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                          <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                          </HBox.margin>
+                          <effect>
+                              <DropShadow>
+                                  <color>
+                                      <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                                  </color>
+                              </DropShadow>
+                          </effect>
+                          <children>
+                              <Button mnemonicParsing="false" onAction="#goToMedicinePageButtonClicked" prefHeight="50.0" prefWidth="149.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Medicine " />
+                          </children>
+                      </VBox>
+                      <VBox layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                          <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                          </HBox.margin>
+                          <effect>
+                              <DropShadow>
+                                  <color>
+                                      <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                                  </color>
+                              </DropShadow>
+                          </effect>
+                          <children>
+                              <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="154.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Wellness" />
+                          </children>
+                      </VBox>
+                      <VBox layoutX="156.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                          <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                          </HBox.margin>
+                          <effect>
+                              <DropShadow>
+                                  <color>
+                                      <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                                  </color>
+                              </DropShadow>
+                          </effect>
+                          <children>
+                              <Button mnemonicParsing="false" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Lab Tests" />
+                          </children>
+                      </VBox>
+                      <VBox layoutX="303.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                          <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                          </HBox.margin>
+                          <effect>
+                              <DropShadow>
+                                  <color>
+                                      <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                                  </color>
+                              </DropShadow>
+                          </effect>
+                          <children>
+                              <Button mnemonicParsing="false" prefHeight="54.0" prefWidth="166.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Beauty" />
+                          </children>
+                      </VBox>
+                      <VBox layoutX="449.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                          <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                          </HBox.margin>
+                          <effect>
+                              <DropShadow>
+                                  <color>
+                                      <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                                  </color>
+                              </DropShadow>
+                          </effect>
+                          <children>
+                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Heath Corner" />
+                          </children>
+                      </VBox>
+                  <VBox layoutX="274.0" layoutY="10.0" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.7254902124404907" green="0.7254902124404907" blue="0.7254902124404907" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#searchOnClick" prefHeight="58.0" prefWidth="161.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Search" />
+                     </children>
+                  </VBox>
+                  </children>
+              </HBox>
 
 
          </children>
@@ -223,7 +223,7 @@
                         <Insets />
                     </HBox.margin>
                 </Label>
-                <TextField fx:id="searchtext" prefHeight="34.0" prefWidth="422.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25;" />
+            <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="422.0" />
 
                 <Label prefHeight="34.0" prefWidth="195.0" text="Offers Cart Sign in/ Sign out">
                     <HBox.margin>
@@ -238,5 +238,6 @@
             <TilePane fx:id="tilePane" hgap="10" orientation="HORIZONTAL" prefColumns="4" prefHeight="200.0" prefWidth="1096.0" vgap="10" />
          </content>
       </ScrollPane>
+          <TextField fx:id="searchtext" layoutX="312.0" layoutY="57.0" onInputMethodTextChanged="#addSearchTextListener" prefHeight="34.0" prefWidth="435.0" promptText="Search" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25;" />
     </children>
 </AnchorPane>

@@ -19,7 +19,7 @@
                             </image>
                         </ImageView>
                         <Button layoutX="9.0" layoutY="201.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Dashboard" textFill="#066790" />
-                        <Button layoutX="9.0" layoutY="248.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Inventory" textFill="#066790" onAction="#goToInvPageButtonClicked"/>
+                        <Button layoutX="9.0" layoutY="248.0" mnemonicParsing="false" onAction="#goToInvPageButtonClicked" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Inventory" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="293.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Menu" textFill="#066790" />
                         <Button layoutX="9.0" layoutY="338.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="189.0" style="-fx-background-radius: 5; -fx-border-color: #09AAF0; -fx-background-color: transparent;" text="Customer" textFill="#066790" />
                     </children>
@@ -110,7 +110,7 @@
                         </DropShadow>
                      </effect>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="GO Back" onAction="#goToIndexPageButtonClicked"/>
+                        <Button mnemonicParsing="false" onAction="#searchOnClick" prefHeight="66.0" prefWidth="162.0" style="-fx-background-radius: 25; -fx-background-color: #f2f2f2;" text="Search" />
                      </children>
                   </VBox>
                     </children>
@@ -119,7 +119,7 @@
                 <Pane layoutY="-5.0" prefHeight="18.0" prefWidth="1102.0" style="-fx-background-color: #09AAF0;" />
                 <HBox layoutX="238.0" layoutY="59.0" prefHeight="34.0" prefWidth="803.0" style="-fx-background-radius: 25; -fx-background-color: white;">
                     <children>
-                        <TextField prefHeight="34.0" prefWidth="422.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25;" text="Search" />
+                  <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="422.0" />
                         <Label prefHeight="34.0" prefWidth="195.0" text="Offers Cart Sign in/ Sign out">
                             <HBox.margin>
                                 <Insets left="10.0" right="10.0" />
@@ -133,6 +133,7 @@
                <content>
                   <TilePane fx:id="tilePane" prefHeight="433.0" prefWidth="823.0" />
                </content></ScrollPane>
+                  <TextField fx:id="searchtext" layoutX="230.0" layoutY="54.0" prefHeight="34.0" prefWidth="437.0" promptText="Search" style="-fx-background-color: #f2f2f2; -fx-background-radius: 25;" />
             </children>
         </AnchorPane>
     </children>

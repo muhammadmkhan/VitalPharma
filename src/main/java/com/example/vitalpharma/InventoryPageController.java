@@ -1,6 +1,7 @@
 package com.example.vitalpharma;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -60,7 +62,19 @@ public class InventoryPageController implements Initializable {
 
 
         Label nameLabel = new Label(med.getName());
-        CheckBox checkBox = new CheckBox();
+
+        Button checkBox = new Button("add to cart");
+        checkBox.setUserData(med.getName());
+        checkBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                Node sourceComp=(Node)event.getSource();
+                String medName=(String)sourceComp.getUserData();
+                shoppingCArt shoppingCArt= com.example.vitalpharma.shoppingCArt.getINSTANCE();
+                shoppingCArt.addMed(med);
+            }
+        });
         vbox.getChildren().addAll(imageView, nameLabel,checkBox);
 
         return vbox;

@@ -1,5 +1,7 @@
 package com.example.vitalpharma;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +10,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -34,6 +34,12 @@ public class MedicinePageController implements Initializable {
 
     @FXML
     private ScrollPane scrollPane;
+
+    @FXML
+    private TextField searchtext;
+
+    @FXML
+    private ComboBox<String> comboBox = new ComboBox();
 
     @FXML
     private TilePane tilePane;
@@ -131,4 +137,34 @@ public class MedicinePageController implements Initializable {
 
         return vbox;
     }
+
+    @FXML
+    private void searchOnClick(ActionEvent event) {
+//        listsearch.getItems().clear();
+//        tilePane.getChildren().clear();
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        Connection connection = databaseConnection.getConnection();
+        System.out.println(searchtext.getText());
+
+        String getMedNameAndImageQuery = "SELECT medicine_name,image_url FROM vp where medicine_name like '"+searchtext.getText()+"%' limit 200";
+
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(getMedNameAndImageQuery);
+            ObservableList<String> items = FXCollections.observableArrayList();
+            while (resultSet.next()) {
+                // tilePane.getChildren().add(createMedBox(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")))));
+//                listsearch.getItems().addAll(resultSet.getString("medicine_name"));
+                items.add(resultSet.getString("medicine_name"));
+                System.out.println(resultSet.getString("medicine_name"));
+            }
+            comboBox.setItems(items);
+            comboBox.hide();
+            comboBox.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        return listsearch;
+    }
+
 }

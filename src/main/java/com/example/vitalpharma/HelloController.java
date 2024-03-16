@@ -1,5 +1,7 @@
 package com.example.vitalpharma;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +10,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -37,7 +40,9 @@ public class HelloController implements Initializable {
     private TilePane tilePane;
 
     @FXML
-    private ListView<String> listsearch;
+    private ComboBox<String> comboBox = new ComboBox();
+   /* @FXML
+    private ListView<String> listsearch;*/
 
     @FXML
     private TextField searchtext;
@@ -72,7 +77,7 @@ public class HelloController implements Initializable {
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
 
-        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url FROM vp AS med LIMIT 10";
+        String getMedNameAndImageQuery = "SELECT med.medicine_name,med.image_url FROM vp AS med LIMIT 60";
         List<Medicine> medicineList = new ArrayList<>();
         try {
             Statement statement = connection.createStatement();
@@ -118,9 +123,9 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    private ListView<String> searchOnClick(ActionEvent event) {
-        listsearch.getItems().clear();
-        tilePane.getChildren().clear();
+    private void searchOnClick(ActionEvent event) {
+//        listsearch.getItems().clear();
+//        tilePane.getChildren().clear();
         DatabaseConnection databaseConnection = new DatabaseConnection();
         Connection connection = databaseConnection.getConnection();
         System.out.println(searchtext.getText());
@@ -130,18 +135,61 @@ public class HelloController implements Initializable {
         try {
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(getMedNameAndImageQuery);
-
+            ObservableList<String> items = FXCollections.observableArrayList();
             while (resultSet.next()) {
-                tilePane.getChildren().add(createMedBox(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")))));
-                listsearch.getItems().addAll(resultSet.getString("medicine_name"));
+               // tilePane.getChildren().add(createMedBox(new Medicine(resultSet.getString("medicine_name"), new Image(resultSet.getString("image_url")))));
+//                listsearch.getItems().addAll(resultSet.getString("medicine_name"));
+                items.add(resultSet.getString("medicine_name"));
                 System.out.println(resultSet.getString("medicine_name"));
             }
+            comboBox.setItems(items);
+            comboBox.hide();
+            comboBox.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+//        return listsearch;
+    }
+
+
+    public void searchOnTextChanged(String value) {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        Connection connection = databaseConnection.getConnection();
+        System.out.println(value);
+
+        String getMedNameAndImageQuery = "SELECT medicine_name,image_url FROM vp where medicine_name like '"+value+"%' limit 200";
+        System.out.println(getMedNameAndImageQuery);
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(getMedNameAndImageQuery);
+
+            ObservableList<String> items = FXCollections.observableArrayList();
+
+            while (resultSet.next()) {
+                String medicineName = resultSet.getString("medicine_name");
+                System.out.println(medicineName);
+                items.add(medicineName);
+            }
+
+            comboBox.setItems(items);
+            comboBox.hide();
+            comboBox.show();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return listsearch;
     }
-
-
+    @FXML
+    public void addSearchTextListener() {
+        searchtext.setOnInputMethodTextChanged(event -> {
+            if(searchtext.getText()!=null){
+                System.out.println("setOnInputMethodTextChanged");
+                searchOnTextChanged(searchtext.getText());
+            }
+        });
+        /*searchtext.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                searchOnTextChanged(newValue);
+            }
+        });*/}
 }
